@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strix: open-source AI pentesting (unofficial showcase)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header>
+  <h1>Str<span>ix</span></h1>
+  <p class="tag">The open-source AI pentesting tool. Autonomous AI hackers that find and fix your app’s vulnerabilities.</p>
+</header>
+
+<section>
+  <h2>What is Strix?</h2>
+  <p>Strix is a set of autonomous AI penetration testing agents that act like real hackers. They run your code dynamically, find vulnerabilities, and validate them with actual proofs-of-concept. It's built for developers and security teams who want fast, accurate security testing without the overhead of manual pentesting or the false positives of static analysis tools.</p>
+</section>
+
+<section>
+  <h2>Key capabilities</h2>
+  <ul>
+    <li><strong>Full pentesting toolkit:</strong> reconnaissance, exploitation, and validation out of the box</li>
+    <li><strong>Multi-agent orchestration:</strong> teams of AI pentesters that collaborate and scale</li>
+    <li><strong>Real exploit validation:</strong> working PoCs rather than scanner false positives</li>
+    <li><strong>Developer-first CLI:</strong> actionable findings with remediation guidance</li>
+    <li><strong>Auto-fix &amp; reporting:</strong> generates patches and compliance-ready pentest reports</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Features</h2>
+  <div class="grid">
+    <div class="card"><h3>Agentic pentesting tools</h3><ul>
+      <li>HTTP interception proxy (Caido)</li>
+      <li>Browser exploitation (XSS, CSRF, clickjacking, auth bypass)</li>
+      <li>Shell &amp; command execution</li>
+      <li>Python exploit sandbox for PoCs</li>
+      <li>Recon &amp; OSINT</li>
+      <li>SAST + DAST code analysis</li>
+      <li>Findings with CVSS scoring &amp; OWASP classification</li>
+    </ul></div>
+    <div class="card"><h3>Vulnerability coverage</h3><ul>
+      <li>Broken access control</li>
+      <li>Injection (SQL, NoSQL, OS command, SSTI)</li>
+      <li>Server-side (SSRF, XXE, deserialization, RCE)</li>
+      <li>Client-side (XSS, prototype pollution, CSRF)</li>
+      <li>Business logic flaws</li>
+      <li>Authentication &amp; session (JWT, session fixation)</li>
+      <li>Infrastructure &amp; cloud misconfigurations</li>
+      <li>API security</li>
+    </ul></div>
+    <div class="card"><h3>Graph of agents</h3><ul>
+      <li>Specialized agents for recon, exploitation, and post-exploitation</li>
+      <li>Parallel execution across multiple targets</li>
+      <li>Agents share discoveries and chain vulnerabilities</li>
+    </ul></div>
+    <div class="card"><h3>Workflow</h3><ul>
+      <li>Headless mode (<code>-n</code>) for servers and CI</li>
+      <li>GitHub Actions / CI/CD integration</li>
+      <li>API testing from OpenAPI, Swagger, or Postman</li>
+      <li>Local web viewer: <code>strix view</code></li>
+      <li>Connect your own MCP servers</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>Quick start</h2>
+  <p>Prerequisites: Docker (running) and an API key from a <a href="https://docs.strix.ai/llm-providers/overview">supported LLM provider</a>.</p>
+<pre><code><span class="c"># Install Strix</span>
+curl -sSL https://strix.ai/install | bash
+
+<span class="c"># Configure your AI provider</span>
+export STRIX_LLM="openrouter/z-ai/glm-5.3"
+export LLM_API_KEY="your-api-key"
+
+<span class="c"># Run your first security assessment</span>
+strix --target ./app-directory</code></pre>
+  <p>The first run pulls the sandbox Docker image, and results are saved to <code>strix_runs/&lt;run-name&gt;</code>. This snippet comes from the project README. See the <a href="https://docs.strix.ai/quickstart">official quick start</a> for current instructions.</p>
+  <p class="warn"><strong>Authorized use only.</strong> Only run Strix against systems you own or have explicit, written permission to test.</p>
+</section>
+
+<section>
+  <h2>Official links</h2>
+  <ul>
+    <li>GitHub: <a href="https://github.com/usestrix/strix">github.com/usestrix/strix</a></li>
+    <li>Website: <a href="https://strix.ai">strix.ai</a></li>
+    <li>Docs: <a href="https://docs.strix.ai">docs.strix.ai</a> (<a href="https://docs.strix.ai/quickstart">Quick start</a>, <a href="https://docs.strix.ai/usage/cli">CLI reference</a>, <a href="https://docs.strix.ai/integrations/github-actions">GitHub Actions</a>)</li>
+    <li>PyPI: <a href="https://pypi.org/project/strix-agent/">strix-agent</a></li>
+    <li>Community: <a href="https://discord.gg/strix-ai">Discord</a></li>
+  </ul>
+</section>
+
+<footer>
+  <p>This is an unofficial showcase, not affiliated with or endorsed by the Strix team. All content is summarized from the <a href="https://github.com/usestrix/strix">usestrix/strix</a> README.</p>
+  <p>Strix is licensed under the <a href="https://github.com/usestrix/strix/blob/main/LICENSE">Apache License 2.0</a>.</p>
+</footer>
+</main>
+</body>
+</html>
